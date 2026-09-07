@@ -20,10 +20,10 @@
     <title>A Special Birthday Gift For You ♡</title>
     <meta name="description" content="Hadiah ulang tahun virtual interaktif penuh cinta dan kenangan terindah.">
     
-    <!-- Google Fonts: Playfair Display, Sacramento (Calligraphy), Plus Jakarta Sans, Patrick Hand (Handwritten notes) -->
+    <!-- Google Fonts: Cinzel (Haute Couture Serif), Playfair Display, Sacramento (Calligraphy), Plus Jakarta Sans, Patrick Hand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css?v=2.5">
 </head>
@@ -66,8 +66,8 @@
             <div class="page-content center-flow">
                 <div class="opening-glow-orb"></div>
 
-                <div id="opening-badge" class="opening-badge">A GIFT OF LOVE</div>
-                <h1 id="opening-title" class="opening-title">A Special Gift<br><span>For You</span></h1>
+                <div id="opening-badge" class="opening-badge">✦ HAUTE AMOUR • EXCLUSIVE SAMPLE EDITION ✦</div>
+                <h1 id="opening-title" class="opening-title">A Special Gift<br><span class="gold-shimmer-text">For You</span></h1>
                 
                 <div class="heart-pulse-box">
                     <span class="pulsing-heart">❤️</span>
@@ -114,15 +114,17 @@
                     <div id="envelope-3d" class="envelope-3d">
                         <!-- Inside Letter Card (Slides up and reveals) -->
                         <div id="envelope-letter" class="envelope-letter-card">
+                            <div class="card-filigree-top" aria-hidden="true">✦ ✧ ✦</div>
                             <div class="card-icon">💌</div>
                             <h3 class="card-title">Happy Birthday</h3>
                             <div class="card-divider">
                                 <span class="divider-line"></span>
-                                <span class="divider-heart">♡</span>
+                                <span class="divider-heart">❦</span>
                                 <span class="divider-line"></span>
                             </div>
                             <p class="card-subtitle">Sebuah pesan tulus dari hati</p>
                             <span class="card-signature">Untukmu Sayang ✨</span>
+                            <div class="card-filigree-bottom" aria-hidden="true">✦ ✧ ✦</div>
                         </div>
 
                         <!-- Envelope Pocket & Flaps -->
@@ -163,6 +165,7 @@
 
                     <!-- Letter Stationery Header -->
                     <header class="letter-header">
+                        <div class="letter-royal-crest" aria-hidden="true">✦ ❦ ✦</div>
                         <span class="letter-date" id="letter-date-display">6 September 2026</span>
                         <h2 class="letter-heading-script">Happy Birthday, <span id="letter-name-display">Sayang</span>!</h2>
                         <div class="letter-divider">
@@ -194,7 +197,7 @@
                          ========================================== -->
                     <div class="vinyl-player-card">
                         <div class="player-top-header">
-                            <span class="player-badge">NOW PLAYING</span>
+                            <span class="player-badge">✦ BESPOKE SOUND SYSTEM • NOW PLAYING ✦</span>
                             <span class="sound-wave-bars" id="sound-wave-bars">
                                 <span></span><span></span><span></span><span></span>
                             </span>
@@ -285,9 +288,9 @@
                     <!-- Scrapbook Header -->
                     <header class="scrapbook-header">
                         <div class="washi-tape tape-center"></div>
-                        <span class="script-tag">Sweet Little Moments</span>
+                        <span class="script-tag">✦ Memoria Pretiosa ✦</span>
                         <h2 class="scrapbook-title">Our Memories ♡</h2>
-                        <p class="scrapbook-subtitle">Setiap momen bersamamu adalah bagian favorit dalam hidupku</p>
+                        <p class="scrapbook-subtitle">Setiap momen bersamamu adalah bagian terindah dalam hidupku</p>
                         <p class="scrapbook-hint">(Ketuk foto untuk memperbesar ✨)</p>
                     </header>
 
@@ -325,10 +328,12 @@
                 <div class="final-card">
                     <!-- Floating Celebration Icon -->
                     <div class="celebration-badge">
+                        <span class="badge-crown" aria-hidden="true">👑</span>
                         <span class="badge-cake">🎂</span>
                         <div class="badge-sparkles">✨</div>
                     </div>
 
+                    <div class="final-edition-tag">✦ GRAND CELEBRATION ✦</div>
                     <h2 class="final-title">Happy Birthday ❤️</h2>
                     <h3 class="final-name" id="final-name-display">Sayang</h3>
 
@@ -353,6 +358,22 @@
                             <span>Bagikan Momen Ini</span>
                             <span class="btn-arrow">♡</span>
                         </button>
+                    </div>
+
+                    <!-- Sample Showcase / Order Banner (Bisa diaktifkan untuk jualan) -->
+                    <div class="sample-showcase-box" id="sample-showcase-box">
+                        <div class="sample-pill-badge">✦ CONTOH PRODUK • SIAP DIORDER ✦</div>
+                        <h4 class="sample-title">Tertarik Buat Website Kado Mewah Seperti Ini?</h4>
+                        <p class="sample-description">
+                            Kado virtual paling berkesan untuk pacar, sahabat, atau orang tersayang.
+                            Semua teks, nama, tanggal, surat cinta, galeri foto, musik favorit, hingga kartu cetak QR Code dapat di-custom sesuai pesananmu! ✨
+                        </p>
+                        <a id="btn-sample-order" href="https://wa.me/?text=Halo%20kak%2C%20saya%20tertarik%20mau%20pesan%20website%20hadiah%20ulang%20tahun%20mewah%20seperti%20demo%20ini%20%E2%9C%A8" target="_blank" class="btn-sample-order">
+                            <span class="order-icon">💬</span>
+                            <span>Pesan Website Seperti Ini Sekarang</span>
+                            <span class="order-arrow">→</span>
+                        </a>
+                        <span class="sample-price-tag">Bisa custom nama, foto, lagu, surat, & kartu QR fisik ♡</span>
                     </div>
 
                     <div class="final-wishes-footer">

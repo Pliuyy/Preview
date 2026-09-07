@@ -9,47 +9,67 @@
    KONFIGURASI — UBAH DATA DI SINI DENGAN MUDAH
    ========================================================================== */
 const birthdayConfig = {
-    // Nama panggilan orang tersayang
-    name: "Sayangku",
+    // Mode Sampel Jualan (Set true untuk menampilkan banner order/demo, set false saat dikirim ke klien)
+    isSampleMode: true,
 
-    // Tanggal ulang tahun / perayaan
-    birthday: "6 September 2026",
+    // Nomor WhatsApp Pembuat / Penjual (Isi dengan nomor Anda e.g. "6281234567890" untuk menerima order langsung dari calon pembeli)
+    sellerWhatsApp: "",
+
+    // Pesan otomatis saat calon pembeli klik tombol order di website
+    orderMessage: "Halo kak, saya tertarik mau pesan website hadiah ulang tahun mewah seperti demo ini ✨",
+
+    // Nama panggilan / nama pasangan (Sample)
+    name: "Clarissa Putri",
+
+    // Tanggal ulang tahun / perayaan sample
+    birthday: "24 Oktober 2026",
 
     // Judul lagu yang diputar di vinyl player
-    songTitle: "About You 1975",
+    songTitle: "About You — The 1975",
 
-    // Teks surat ulang tahun romantis (bisa beberapa paragraf)
-    letter: `Selamat ulang tahun untuk orang yang paling berharga di hidup akuu! ❤️
+    // Teks surat ulang tahun romantis sample (sangat menyentuh & puitis untuk memikat calon pembeli)
+    letter: `Selamat ulang tahun untuk seseorang yang paling berharga dan istimewa di hidupku! ❤️
 
-Setiap detik sama kamu tuh adalah sebuah anugerah yang selalu aku syukuri. Terima kasih sayangg karna kamu telah hadir dengan segala kehangatan, senyum manismu yang selalu menenangkan duniaku, dan tulusnya cintamu yang tak pernah pudar.
+Setiap detik yang terlewati bersamamu adalah anugerah terindah yang selalu aku syukuri. Terima kasih telah hadir dengan segala kehangatan, senyum manismu yang selalu menenangkan duniaku, dan tulusnya cintamu yang membuat hari-hariku terasa jauh lebih bermakna.
 
-Di hari yang begitu istimewa ini, aku berdoa semoga setiap langkahmu selalu dipenuhi kebahagiaan, kesehatan, kemudahan dalam setiap impian, serta dikelilingi orang-orang yang tulus menyayangi kamuu.
+Di hari yang begitu istimewa dan penuh berkah ini, aku berdoa semoga setiap langkahmu selalu dipenuhi sukacita, kesehatan, kemudahan dalam setiap impian, serta dikelilingi orang-orang yang tulus menyayangimu.
 
-Apapun cerita yang akan kita tulis esok dan seterusnya, ketahuilah bahwa aku akan selalu ada di sampingmu, menggenggam tanganmu, dan mencintaimu lebih dari hari kemarin.
+Apapun cerita dan musim yang akan kita lalui esok dan seterusnya, ketahuilah bahwa aku akan selalu ada di sampingmu, menggenggam erat tanganmu, dan mencintaimu lebih dari hari kemarin.
 
-Happy Birthday, my favorite person in the entire world! ✨♡`,
+Happy Birthday, my favorite person in the entire universe! ✨♡`,
 
-    // Galeri foto kenangan untuk scrapbook & polaroid
-    // Cukup simpan foto Anda di folder assets/images/ dengan nama photo1.jpg, photo2.jpg, dst.
+    // Galeri foto kenangan untuk scrapbook & polaroid sample
     photos: [
         {
             src: "assets/images/photo1.png",
-            caption: "Foto paling gemas sedunia ♡"
+            caption: "Hari pertama kita jalan berdua ♡"
         },
         {
             src: "assets/images/photo2.png",
-            caption: "Waktu kamu main ke rumah aku ✨"
+            caption: "Senyum manismu yang selalu menenangkan duniaku ✨"
         },
         {
             src: "assets/images/photo3.png",
-            caption: "Waktu kita main setelah 1 bulan ga ketemu 🤯"
+            caption: "Momen tawa bahagia yang paling berharga 📸"
         },
         {
             src: "assets/images/photo4.png",
-            caption: "Piknik kecil kecilan ga sii hehe 🥰"
+            caption: "Selamanya menjadi orang paling istimewa bagiku 🥰"
         }
     ]
 };
+
+// Dukungan Dynamic URL Params untuk demo cepat ke klien (contoh: ?name=Adinda&date=12+Desember+2026)
+(function() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('name')) birthdayConfig.name = params.get('name');
+        if (params.get('date')) birthdayConfig.birthday = params.get('date');
+        if (params.get('song')) birthdayConfig.songTitle = params.get('song');
+        if (params.get('wa')) birthdayConfig.sellerWhatsApp = params.get('wa');
+        if (params.get('sample') === 'false') birthdayConfig.isSampleMode = false;
+    } catch (e) {}
+})();
 
 /* ==========================================================================
    APP STATE
@@ -101,28 +121,22 @@ function showPage(pageNumber) {
         if (pageNumber === 1) {
             appEl.style.background = 'var(--night-magenta)';
         } else if (pageNumber === 2) {
-            appEl.style.background = 'radial-gradient(circle at center, #fff0f5 0%, #fcd6e3 100%)';
+            appEl.style.background = 'var(--night-velvet)';
         } else if (pageNumber === 3 || pageNumber === 4) {
-            appEl.style.background = 'var(--scrapbook-bg)';
+            appEl.style.background = 'var(--night-velvet)';
         } else if (pageNumber === 5) {
-            appEl.style.background = 'radial-gradient(circle at center, #350c30 0%, #170420 100%)';
+            appEl.style.background = 'var(--night-velvet)';
         }
     }
 
-    // Sync mobile browser theme-color meta
+    // Sync mobile browser theme-color meta for seamless royal aesthetic
     let metaTheme = document.querySelector('meta[name="theme-color"]');
     if (!metaTheme) {
         metaTheme = document.createElement('meta');
         metaTheme.name = 'theme-color';
         document.head.appendChild(metaTheme);
     }
-    if (pageNumber === 1 || pageNumber === 5) {
-        metaTheme.content = '#150622';
-    } else if (pageNumber === 2) {
-        metaTheme.content = '#fcd6e3';
-    } else {
-        metaTheme.content = '#faf3f5';
-    }
+    metaTheme.content = '#0c0214';
 
     // Show floating music toggle on pages 2, 4, 5
     // Page 3 has its own dedicated interactive vinyl player deck, so we keep floating capsule hidden on page 3 to avoid clutter and overlap
@@ -847,8 +861,24 @@ function initFinalCelebration() {
     const finalName = document.getElementById('final-name-display');
     const btnReplay = document.getElementById('btn-replay');
     const btnShare = document.getElementById('btn-share');
+    const sampleBox = document.getElementById('sample-showcase-box');
+    const btnOrder = document.getElementById('btn-sample-order');
 
     if (finalName) finalName.textContent = birthdayConfig.name;
+
+    // Handle Sample Mode Showcase & Order Link
+    if (sampleBox) {
+        if (birthdayConfig.isSampleMode) {
+            sampleBox.classList.remove('hidden');
+            if (btnOrder) {
+                const phone = birthdayConfig.sellerWhatsApp ? birthdayConfig.sellerWhatsApp.replace(/[^0-9]/g, '') : '';
+                const msg = encodeURIComponent(birthdayConfig.orderMessage);
+                btnOrder.href = phone ? `https://wa.me/${phone}?text=${msg}` : `https://wa.me/?text=${msg}`;
+            }
+        } else {
+            sampleBox.classList.add('hidden');
+        }
+    }
 
     if (btnReplay) {
         btnReplay.onclick = () => {
@@ -889,20 +919,21 @@ function launchCanvasConfetti() {
 
     state.confettiRunning = true;
     const particles = [];
-    const colors = ['#ff5388', '#f472b6', '#fbcfe8', '#fbbf24', '#ffffff', '#ec4899', '#ff94b9'];
+    const colors = ['#ffd700', '#fcf6ba', '#d4af37', '#e6ca65', '#ff7597', '#ffb6c1', '#ffffff', '#e8b4b8', '#f43f5e'];
 
-    // Spawn 90 rich particles
-    for (let i = 0; i < 90; i++) {
+    // Spawn 100 rich luxury particles (gold foil, stars, ribbons, hearts)
+    for (let i = 0; i < 100; i++) {
+        const randShape = Math.random();
         particles.push({
             x: Math.random() * width,
             y: Math.random() * -height,
-            size: Math.random() * 8 + 5,
+            size: Math.random() * 8 + 6,
             color: colors[Math.floor(Math.random() * colors.length)],
             speedY: Math.random() * 3 + 2,
-            speedX: (Math.random() - 0.5) * 2,
+            speedX: (Math.random() - 0.5) * 2.2,
             rotation: Math.random() * 360,
             rotationSpeed: (Math.random() - 0.5) * 6,
-            shape: Math.random() > 0.4 ? 'rect' : 'heart'
+            shape: randShape > 0.65 ? 'star' : (randShape > 0.35 ? 'rect' : 'heart')
         });
     }
 
@@ -931,10 +962,11 @@ function launchCanvasConfetti() {
             ctx.fillStyle = p.color;
 
             if (p.shape === 'rect') {
-                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.5);
+            } else if (p.shape === 'heart') {
+                drawHeart(ctx, 0, 0, p.size * 0.85);
             } else {
-                // Heart shape drawing
-                drawHeart(ctx, 0, 0, p.size * 0.8);
+                drawStar(ctx, 0, 0, 4, p.size * 0.6, p.size * 0.25);
             }
 
             ctx.restore();
@@ -944,6 +976,30 @@ function launchCanvasConfetti() {
     }
 
     requestAnimationFrame(render);
+}
+
+function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+    let rot = Math.PI / 2 * 3;
+    let x = cx;
+    let y = cy;
+    let step = Math.PI / spikes;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - outerRadius);
+    for (let i = 0; i < spikes; i++) {
+        x = cx + Math.cos(rot) * outerRadius;
+        y = cy + Math.sin(rot) * outerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+
+        x = cx + Math.cos(rot) * innerRadius;
+        y = cy + Math.sin(rot) * innerRadius;
+        ctx.lineTo(x, y);
+        rot += step;
+    }
+    ctx.lineTo(cx, cy - outerRadius);
+    ctx.closePath();
+    ctx.fill();
 }
 
 function drawHeart(ctx, x, y, size) {
@@ -965,15 +1021,18 @@ function initAmbientParticles() {
     const container = document.getElementById('ambient-particles');
     if (!container) return;
 
+    const symbols = ['✦', '✨', '✧', '♡', '⋆'];
+    const colors = ['#ffd700', '#fff3c4', '#ffb6c1', '#fce7f3', '#e6ca65'];
+
     setInterval(() => {
-        // Spawn a gentle floating heart or sparkle occasionally
-        if (Math.random() > 0.4) {
+        if (Math.random() > 0.35) {
             const particle = document.createElement('span');
-            particle.className = Math.random() > 0.5 ? 'particle-heart' : 'particle-sparkle';
-            particle.textContent = Math.random() > 0.5 ? '♡' : '✨';
+            particle.className = 'particle-sparkle';
+            particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
             particle.style.left = `${Math.random() * 95}vw`;
-            particle.style.fontSize = `${Math.random() * 14 + 10}px`;
-            particle.style.color = Math.random() > 0.5 ? '#ff94b9' : '#fce7f3';
+            particle.style.fontSize = `${Math.random() * 12 + 10}px`;
+            particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.filter = 'drop-shadow(0 0 6px rgba(212, 175, 55, 0.4))';
             particle.style.animation = `floatUpFade ${Math.random() * 4 + 5}s linear forwards`;
 
             container.appendChild(particle);
@@ -982,7 +1041,7 @@ function initAmbientParticles() {
                 particle.remove();
             }, 9000);
         }
-    }, 1200);
+    }, 1000);
 }
 
 function createFloatingHearts() {

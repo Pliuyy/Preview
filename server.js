@@ -71,7 +71,7 @@ server.listen(PORT, '0.0.0.0', () => {
     console.log(`\n======================================================`);
     console.log(`🚀 LOCAL SERVER RUNNING!`);
     console.log(`💻 Buka di Laptop : http://localhost:${PORT}/index.html`);
-    console.log(`📱 Buka di HP (Wi-Fi): http://192.168.0.230:${PORT}/index.html`);
+    console.log(`📱 Buka di HP (Wi-Fi): http://192.168.0.107:${PORT}/index.html`);
     console.log(`🖨️ Cetak Kartu QR : http://localhost:${PORT}/cetak-kartu-qr.html`);
     console.log(`======================================================\n`);
 });
