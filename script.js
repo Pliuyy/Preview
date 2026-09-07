@@ -9,52 +9,49 @@
    KONFIGURASI — UBAH DATA DI SINI DENGAN MUDAH
    ========================================================================== */
 const birthdayConfig = {
-    // Mode Sampel Jualan (Set true untuk menampilkan banner order/demo, set false saat dikirim ke klien)
+    // Sample Mode (Set to true to display the Fiverr showcase card, set false for client delivery)
     isSampleMode: true,
 
-    // Nomor WhatsApp Pembuat / Penjual (Isi dengan nomor Anda e.g. "6281234567890" untuk menerima order langsung dari calon pembeli)
-    sellerWhatsApp: "",
+    // Fiverr Gig Order URL
+    fiverrGigUrl: "https://www.fiverr.com/s/DmzvZEQ",
 
-    // Pesan otomatis saat calon pembeli klik tombol order di website
-    orderMessage: "Halo kak, saya tertarik mau pesan website hadiah ulang tahun mewah seperti demo ini ✨",
-
-    // Nama panggilan / nama pasangan (Sample)
+    // Name of the special person (Sample)
     name: "Clarissa Putri",
 
-    // Tanggal ulang tahun / perayaan sample
-    birthday: "24 Oktober 2026",
+    // Birthday date (Sample)
+    birthday: "October 24, 2026",
 
-    // Judul lagu yang diputar di vinyl player
+    // Song title displayed on the vinyl player
     songTitle: "About You — The 1975",
 
-    // Teks surat ulang tahun romantis sample (sangat menyentuh & puitis untuk memikat calon pembeli)
-    letter: `Selamat ulang tahun untuk seseorang yang paling berharga dan istimewa di hidupku! ❤️
+    // Romantic birthday letter (Poetic, heartfelt, and deeply touching)
+    letter: `Happy Birthday to the most precious and extraordinary person in my life! ❤️
 
-Setiap detik yang terlewati bersamamu adalah anugerah terindah yang selalu aku syukuri. Terima kasih telah hadir dengan segala kehangatan, senyum manismu yang selalu menenangkan duniaku, dan tulusnya cintamu yang membuat hari-hariku terasa jauh lebih bermakna.
+Every single second spent with you is a gift I will forever cherish. Thank you for walking into my world with your warmth, your radiant smile that always brings me peace, and your sincere love that makes every day brighter.
 
-Di hari yang begitu istimewa dan penuh berkah ini, aku berdoa semoga setiap langkahmu selalu dipenuhi sukacita, kesehatan, kemudahan dalam setiap impian, serta dikelilingi orang-orang yang tulus menyayangimu.
+On this special and blessed day, I pray that your journey is always filled with boundless joy, good health, effortless grace towards your dreams, and people who love you wholeheartedly.
 
-Apapun cerita dan musim yang akan kita lalui esok dan seterusnya, ketahuilah bahwa aku akan selalu ada di sampingmu, menggenggam erat tanganmu, dan mencintaimu lebih dari hari kemarin.
+No matter where the road leads us tomorrow and beyond, know that I will always be right beside you—holding your hand, cheering you on, and loving you more than yesterday.
 
 Happy Birthday, my favorite person in the entire universe! ✨♡`,
 
-    // Galeri foto kenangan untuk scrapbook & polaroid sample
+    // Sample scrapbook memory photos and captions
     photos: [
         {
             src: "assets/images/photo1.png",
-            caption: "Hari pertama kita jalan berdua ♡"
+            caption: "Our first coffee date & the day my world changed ♡"
         },
         {
             src: "assets/images/photo2.png",
-            caption: "Senyum manismu yang selalu menenangkan duniaku ✨"
+            caption: "Your radiant smile under the blossoms ✨"
         },
         {
             src: "assets/images/photo3.png",
-            caption: "Momen tawa bahagia yang paling berharga 📸"
+            caption: "Golden hour walks & endless conversations 🌅"
         },
         {
             src: "assets/images/photo4.png",
-            caption: "Selamanya menjadi orang paling istimewa bagiku 🥰"
+            caption: "Celebrating you, today and for all the tomorrows 🎂"
         }
     ]
 };
@@ -170,7 +167,7 @@ function initOpeningLoader() {
     const tapHint = document.getElementById('tap-to-open-hint');
     let currentPercent = 0;
 
-    if (statusEl) statusEl.textContent = "Mempersiapkan kejutanmu...";
+    if (statusEl) statusEl.textContent = "Unwrapping your surprise...";
     if (progressEl) progressEl.style.width = "0%";
     if (percentEl) percentEl.textContent = "0%";
 
@@ -184,7 +181,7 @@ function initOpeningLoader() {
 
         if (currentPercent >= 100) {
             clearInterval(interval);
-            if (statusEl) statusEl.textContent = "Kejutan sudah siap! ✨";
+            if (statusEl) statusEl.textContent = "Your surprise is ready! ✨";
             if (tapHint) tapHint.classList.remove('hidden');
 
             // Automatically transition to Page 2 (3D Envelope)
@@ -426,7 +423,7 @@ function initMusicPlayer() {
         if (capsuleTrackTitle) {
             capsuleTrackTitle.textContent = isPlaying 
                 ? (birthdayConfig.songTitle || "About You") 
-                : "Jeda ⏸";
+                : "Paused ⏸";
         }
     }
     window.updatePlayerUI = updatePlayerUI;
@@ -862,18 +859,16 @@ function initFinalCelebration() {
     const btnReplay = document.getElementById('btn-replay');
     const btnShare = document.getElementById('btn-share');
     const sampleBox = document.getElementById('sample-showcase-box');
-    const btnOrder = document.getElementById('btn-sample-order');
+    const btnFiverrOrder = document.getElementById('btn-fiverr-order');
 
     if (finalName) finalName.textContent = birthdayConfig.name;
 
-    // Handle Sample Mode Showcase & Order Link
+    // Handle Sample Mode Showcase & Fiverr Order Link
     if (sampleBox) {
         if (birthdayConfig.isSampleMode) {
             sampleBox.classList.remove('hidden');
-            if (btnOrder) {
-                const phone = birthdayConfig.sellerWhatsApp ? birthdayConfig.sellerWhatsApp.replace(/[^0-9]/g, '') : '';
-                const msg = encodeURIComponent(birthdayConfig.orderMessage);
-                btnOrder.href = phone ? `https://wa.me/${phone}?text=${msg}` : `https://wa.me/?text=${msg}`;
+            if (btnFiverrOrder && birthdayConfig.fiverrGigUrl) {
+                btnFiverrOrder.href = birthdayConfig.fiverrGigUrl;
             }
         } else {
             sampleBox.classList.add('hidden');
@@ -919,7 +914,7 @@ function launchCanvasConfetti() {
 
     state.confettiRunning = true;
     const particles = [];
-    const colors = ['#ffd700', '#fcf6ba', '#d4af37', '#e6ca65', '#ff7597', '#ffb6c1', '#ffffff', '#e8b4b8', '#f43f5e'];
+    const colors = ['#ff758c', '#ffd1dc', '#ff5388', '#f472b6', '#ff7597', '#ffb6c1', '#ffffff', '#e8b4b8', '#f43f5e'];
 
     // Spawn 100 rich luxury particles (gold foil, stars, ribbons, hearts)
     for (let i = 0; i < 100; i++) {
@@ -1022,7 +1017,7 @@ function initAmbientParticles() {
     if (!container) return;
 
     const symbols = ['✦', '✨', '✧', '♡', '⋆'];
-    const colors = ['#ffd700', '#fff3c4', '#ffb6c1', '#fce7f3', '#e6ca65'];
+    const colors = ['#ff758c', '#ffd1dc', '#ffb6c1', '#fce7f3', '#f472b6'];
 
     setInterval(() => {
         if (Math.random() > 0.35) {
@@ -1032,7 +1027,7 @@ function initAmbientParticles() {
             particle.style.left = `${Math.random() * 95}vw`;
             particle.style.fontSize = `${Math.random() * 12 + 10}px`;
             particle.style.color = colors[Math.floor(Math.random() * colors.length)];
-            particle.style.filter = 'drop-shadow(0 0 6px rgba(212, 175, 55, 0.4))';
+            particle.style.filter = 'drop-shadow(0 0 6px rgba(255, 83, 136, 0.4))';
             particle.style.animation = `floatUpFade ${Math.random() * 4 + 5}s linear forwards`;
 
             container.appendChild(particle);
@@ -1067,8 +1062,8 @@ function createFloatingHearts() {
 function handleShare() {
     const shareUrl = window.location.href.split('#')[0];
     const shareData = {
-        title: `Selamat Ulang Tahun, ${birthdayConfig.name}! ♡`,
-        text: `Sebuah hadiah virtual dan kartu ucapan ulang tahun rahasia spesial untukmu. Buka sekarang!`,
+        title: `Happy Birthday, ${birthdayConfig.name}! ♡`,
+        text: `A special virtual birthday gift and secret card just for you. Open it now!`,
         url: shareUrl
     };
 
@@ -1087,12 +1082,12 @@ function copyUrlFallback(urlToCopy) {
     const url = urlToCopy || window.location.href.split('#')[0];
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(() => {
-            showToast("Tautan hadiah berhasil disalin ke clipboard! ♡");
+            showToast("Gift link copied to clipboard! ♡");
         }).catch(() => {
-            showToast("Bagikan tautan ini ke orang tersayang ♡");
+            showToast("Share this link with your special someone ♡");
         });
     } else {
-        showToast("Bagikan tautan ini ke orang tersayang ♡");
+        showToast("Share this link with your special someone ♡");
     }
 }
 

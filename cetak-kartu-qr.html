@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cetak Kartu Hadiah & QR Code ♡</title>
-    <meta name="description" content="Generator dan Kartu Hadiah Fisik QR Code untuk dicetak atau disimpan.">
+    <title>Print Gift Card & QR Code ♡</title>
+    <meta name="description" content="Generate and print a physical gift card with QR code to include in your present.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -372,13 +372,13 @@
     <div class="container">
         <!-- Header -->
         <header class="header-panel">
-            <h1>Kartu Hadiah & QR Code</h1>
-            <p>Cetak kartu ini atau simpan gambarnya untuk diselipkan di kado / amplop fisik pacar Anda ♡</p>
+            <h1>Gift Card & QR Code</h1>
+            <p>Print this card or save the image to slip inside a physical present or envelope ♡</p>
         </header>
 
         <!-- URL Configuration -->
         <div class="url-box">
-            <label for="input-url">Link Website yang Dibuka Saat Scan:</label>
+            <label for="input-url">URL Opened When Scanned:</label>
             <div class="url-input-group">
                 <input type="text" id="input-url" placeholder="https://..." value="">
             </div>
@@ -386,21 +386,21 @@
             <!-- Quick Preset Selector -->
             <div class="url-presets">
                 <button type="button" id="btn-preset-wifi" class="btn-preset active">
-                    📱 Tes Scan HP Sekarang (Wi-Fi Lokal)
+                    📱 Test Scan Now (Local Wi-Fi)
                 </button>
                 <button type="button" id="btn-preset-online" class="btn-preset">
-                    🌐 Link Online Netlify (Untuk Pacar)
+                    🌐 Online Link (For Your Partner)
                 </button>
             </div>
             
             <div class="url-guide-box">
                 <div id="guide-wifi">
-                    <strong>📱 Mode Uji Coba Langsung di HP (Aktif):</strong><br>
-                    Server lokal sudah aktif di laptop Anda. Pastikan HP dan laptop terhubung ke <strong>Wi-Fi yang sama</strong>. Arahkan kamera HP ke QR code di bawah untuk membuka web langsung di HP Anda!
+                    <strong>📱 Local Test Mode (Active):</strong><br>
+                    Your local server is running. Make sure your phone and computer are on the <strong>same Wi-Fi network</strong>. Point your phone camera at the QR code below to open the website on your phone!
                 </div>
                 <div id="guide-online" style="display: none;">
-                    <strong>🌐 Mode Hadiah Online (Bisa Dibuka dari Mana Saja):</strong><br>
-                    Untuk diberikan ke pacar agar bisa dibuka tanpa satu Wi-Fi, upload folder proyek ini ke <a href="https://app.netlify.com/drop" target="_blank" style="color: #ff94b9; font-weight: bold; text-decoration: underline;">app.netlify.com/drop</a> (gratis 30 detik). Masukkan link hasil upload ke kotak di atas!
+                    <strong>🌐 Online Gift Mode (Accessible Anywhere):</strong><br>
+                    To share with your partner so they can open it from anywhere, upload this project folder to <a href="https://app.netlify.com/drop" target="_blank" style="color: #ff94b9; font-weight: bold; text-decoration: underline;">app.netlify.com/drop</a> (free, takes 30 seconds). Paste the resulting link above!
                 </div>
             </div>
         </div>
@@ -411,7 +411,7 @@
                 <div class="card-ribbon">🎀</div>
                 <span class="voucher-badge">EXCLUSIVE INVITATION</span>
                 <h2 class="voucher-title">Virtual Gift Voucher</h2>
-                <p class="voucher-subtitle">Khusus untuk orang paling istimewa</p>
+                <p class="voucher-subtitle">Exclusively for the most special person</p>
 
                 <div class="card-decor-hearts">✨ ❤️ ✨</div>
 
@@ -421,34 +421,34 @@
                 </div>
 
                 <p class="voucher-instruction">
-                    Pindai kode cinta ini menggunakan <strong>kamera HP</strong> untuk membuka kejutan rahasiamu
+                    Scan this love code with your <strong>phone camera</strong> to unlock your secret surprise
                 </p>
 
-                <span class="voucher-footer-tag">Happy Birthday Sayangku ♡</span>
+                <span class="voucher-footer-tag">Happy Birthday My Love ♡</span>
             </div>
         </div>
 
         <!-- Action Buttons -->
         <div class="action-buttons">
             <button id="btn-print" class="btn btn-print">
-                <span>🖨️ Cetak Kartu Hadiah (Print / PDF)</span>
+                <span>🖨️ Print Gift Card (Print / PDF)</span>
             </button>
             <button id="btn-download-qr" class="btn btn-download">
-                <span>📥 Unduh Gambar QR Code (PNG Tajam)</span>
+                <span>📥 Download QR Code Image (Sharp PNG)</span>
             </button>
             <button id="btn-download-svg" class="btn btn-download">
-                <span>📥 Unduh Gambar QR Code (Format SVG)</span>
+                <span>📥 Download QR Code Image (SVG Format)</span>
             </button>
             <button id="btn-test-url" class="btn btn-test">
-                <span>🔗 Uji Buka Link di Tab Baru</span>
+                <span>🔗 Test Open Link in New Tab</span>
             </button>
             <a href="index.html" class="btn btn-back">
-                <span>← Buka Website Hadiah Langsung</span>
+                <span>← Open Birthday Gift Website</span>
             </a>
         </div>
     </div>
 
-    <div id="toast" class="toast">Berhasil diunduh! 💾</div>
+    <div id="toast" class="toast">Downloaded successfully! 💾</div>
 
     <!-- Battle-tested canonical QR Code Generator -->
     <script src="assets/qrcode.js"></script>
@@ -467,7 +467,7 @@
         const guideOnline = document.getElementById('guide-online');
 
         const LOCAL_WIFI_URL = "http://192.168.0.107:8080/index.html";
-        const ONLINE_PLACEHOLDER = "https://hadiah-ulang-tahun-kamu.netlify.app";
+        const ONLINE_PLACEHOLDER = "https://your-birthday-gift.netlify.app";
 
         // Determine default URL (Default to local Wi-Fi so phone scan immediately works)
         let defaultUrl = LOCAL_WIFI_URL;
@@ -533,12 +533,12 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'qr-code-hadiah-ulang-tahun.svg';
+            a.download = 'qr-code-birthday-gift.svg';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            showToast("File QR Code (SVG) berhasil diunduh! 💾");
+            showToast("QR Code (SVG) downloaded successfully! 💾");
         });
 
         // Download High-Resolution Clean PNG
@@ -575,11 +575,11 @@
             const pngUrl = canvas.toDataURL('image/png');
             const a = document.createElement('a');
             a.href = pngUrl;
-            a.download = 'qr-code-hadiah-ulang-tahun.png';
+            a.download = 'qr-code-birthday-gift.png';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            showToast("Gambar QR Code (PNG) berhasil diunduh! 💾");
+            showToast("QR Code (PNG) downloaded successfully! 💾");
         });
 
         function showToast(msg) {
