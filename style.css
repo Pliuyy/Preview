@@ -11,9 +11,9 @@
     --gold-primary: #ff5388;
     --gold-light: #ffd1dc;
     --gold-dark: #b81b4d;
-    --gold-foil: linear-gradient(135deg, #ff758c 0%, #ffffff 35%, #ff5388 70%, #ffd1dc 100%);
-    --gold-foil-bright: linear-gradient(135deg, #ff8da1 0%, #ffffff 30%, #ff5388 65%, #ffd6e0 100%);
-    --gold-shimmer: linear-gradient(90deg, #ff758c 0%, #ffffff 50%, #ff758c 100%);
+    --gold-foil: #ff5388;
+    --gold-foil-bright: #ff758c;
+    --gold-shimmer: #ff5388;
     --gold-border: 1px solid rgba(255, 117, 140, 0.45);
     --gold-border-bright: 1px solid rgba(255, 182, 193, 0.75);
     --gold-glow: 0 0 25px rgba(255, 83, 136, 0.35);
@@ -23,23 +23,23 @@
     --primary-pink: #ff5388;
     --primary-hover: #fa2d68;
     --secondary-pink: #f8bbd0;
-    --rose-gold: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);
-    --rose-gold-foil: linear-gradient(135deg, #f8bbd0 0%, #ffffff 40%, #f48fb1 70%, #fce4ec 100%);
+    --rose-gold: #fad0c4;
+    --rose-gold-foil: #f8bbd0;
     --blush-pink: #fce7f3;
     --light-pink: #fff0f5;
     
     /* Deep Romantic Velvet Backgrounds */
     --deep-magenta: #23082a;
     --dark-purple: #0f0214;
-    --night-magenta: radial-gradient(circle at 50% 20%, #2a0a33 0%, #17041f 55%, #0a010d 100%);
-    --night-velvet: radial-gradient(circle at 50% 30%, #24082c 0%, #130318 60%, #07010a 100%);
+    --night-magenta: #17041f;
+    --night-velvet: #130318;
     
     /* Paper, Vellum & Scrapbook */
     --cream-paper: #fffdf9;
     --paper-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 117, 140, 0.2);
     --scrapbook-bg: var(--night-velvet);
-    --washi-pink: linear-gradient(135deg, rgba(244, 114, 182, 0.6) 0%, rgba(255, 182, 210, 0.8) 50%, rgba(244, 114, 182, 0.6) 100%);
-    --washi-gold: linear-gradient(135deg, rgba(255, 117, 140, 0.65) 0%, rgba(255, 220, 230, 0.95) 50%, rgba(220, 70, 100, 0.65) 100%);
+    --washi-pink: rgba(244, 114, 182, 0.7);
+    --washi-gold: rgba(255, 117, 140, 0.75);
     
     /* Text Colors */
     --text-primary: #ffffff;
@@ -126,7 +126,7 @@ body {
 @media (min-width: 600px) {
     body {
         align-items: center;
-        background: radial-gradient(circle at center, #1f0729 0%, #0a010f 100%);
+        background: #140520;
         padding: 20px 0;
     }
     #app {
@@ -314,7 +314,7 @@ body {
     width: 24px;
     height: 24px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle at center, #ff758c 24%, #1f121d 26%, #0e050e 100%);
+    background: #1f121d;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 83, 136, 0.45);
     display: flex;
     align-items: center;
@@ -444,7 +444,7 @@ body {
     width: 280px;
     height: 280px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle, rgba(255, 83, 136, 0.45) 0%, rgba(244, 114, 182, 0.15) 45%, transparent 70%);
+    background: rgba(255, 83, 136, 0.2);
     filter: blur(30px);
     pointer-events: none;
     animation: floatGlow 6s ease-in-out infinite alternate;
@@ -639,7 +639,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+    background: rgba(255, 255, 255, 0.08);
     transform: rotate(25deg);
     animation: shineLight 3.5s infinite;
 }
@@ -864,7 +864,7 @@ body {
 .divider-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #ff5388, transparent);
+    background: #ff5388;
 }
 
 .divider-heart {
@@ -912,7 +912,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #32071c 0%, #1a030e 100%);
+    background: #260b15;
     clip-path: polygon(0 0, 50% 50%, 0 100%);
     border-radius: 14px 0 0 14px;
     z-index: 5;
@@ -925,7 +925,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #32071c 0%, #1a030e 100%);
+    background: #260b15;
     clip-path: polygon(100% 0, 50% 50%, 100% 100%);
     border-radius: 0 14px 14px 0;
     z-index: 5;
@@ -939,7 +939,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #3c0922 0%, #200412 100%);
+    background: #2e0717;
     clip-path: polygon(0 100%, 50% 48%, 100% 100%);
     border-radius: 0 0 14px 14px;
     z-index: 6;
@@ -967,7 +967,7 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #460c29 0%, #290517 100%);
+    background: #380a20;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     border-radius: 14px 14px 0 0;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
@@ -984,7 +984,7 @@ body {
     width: 48px;
     height: 48px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle at 35% 35%, #ff2a5f 0%, #b80d36 50%, #68041c 100%);
+    background: #b80d36;
     border: 2px solid #ff758c;
     box-shadow: 0 6px 22px rgba(184, 13, 54, 0.6), 0 0 25px rgba(255, 83, 136, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -2px 5px rgba(0, 0, 0, 0.6);
     display: flex;
@@ -1206,7 +1206,7 @@ body {
 .divider-line {
     width: 60px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #ff5388, transparent);
+    background: #ff5388;
 }
 
 /* Letter Content & Typewriter */
@@ -1327,7 +1327,7 @@ body {
    CUSTOM BESPOKE GOLD VINYL MUSIC PLAYER
    ========================================== */
 .vinyl-player-card {
-    background: linear-gradient(145deg, #1f0b1c 0%, #0d030c 100%);
+    background: #180b16;
     border-radius: var(--radius-md);
     padding: 18px 16px;
     color: #ffffff;
@@ -1394,7 +1394,7 @@ body {
     position: relative;
     width: 106px;
     height: 106px;
-    background: linear-gradient(135deg, #260b22 0%, #140313 50%, #1f081c 100%);
+    background: #1c0a19;
     border: 1.5px solid rgba(255, 83, 136, 0.45);
     border-radius: 18px;
     display: flex;
@@ -1410,7 +1410,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle, #291c0e 65%, #ff758c 96%, #8a6417 100%);
+    background: #291c0e;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
@@ -1422,8 +1422,7 @@ body {
     height: 76px;
     border-radius: var(--radius-full);
     background: 
-        radial-gradient(circle, #0b050d 16%, transparent 17%),
-        repeating-radial-gradient(circle, #150917 0px, #150917 2px, #26102a 3px, #150917 4px);
+        #150917;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), inset 0 0 8px rgba(255, 83, 136, 0.45);
     position: relative;
     display: flex;
@@ -1439,9 +1438,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: var(--radius-full);
-    background: conic-gradient(
-        from 30deg, 
-        rgba(255, 209, 220, 0.5) 0deg, 
+    background: #1a0a1a 0deg, 
         transparent 45deg, 
         rgba(255, 209, 220, 0.5) 90deg, 
         transparent 135deg, 
@@ -1468,7 +1465,7 @@ body {
     width: 28px;
     height: 28px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle, #ffd1dc 0%, #ff5388 60%, #8a6417 100%);
+    background: #ff5388;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1517,7 +1514,7 @@ body {
     width: 15px;
     height: 15px;
     border-radius: var(--radius-full);
-    background: radial-gradient(circle, #ffe4e8 20%, #ff5388 60%, #8a6417 100%);
+    background: #ff5388;
     border: 1px solid #fffdf0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
     display: flex;
@@ -1539,7 +1536,7 @@ body {
     right: 7px;
     width: 2.5px;
     height: 42px;
-    background: linear-gradient(to bottom, #ffe4e8 0%, #ff758c 50%, #e11d48 100%);
+    background: #ff758c;
     border-radius: 1px;
     transform: rotate(-10deg);
     transform-origin: top center;
@@ -1552,7 +1549,7 @@ body {
     left: -3px;
     width: 8px;
     height: 13px;
-    background: linear-gradient(135deg, #ff758c, #e11d48);
+    background: #ff5388;
     border: 1px solid #ffe4e8;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -2014,7 +2011,7 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto 16px;
-    background: radial-gradient(circle, rgba(255, 83, 136, 0.45) 0%, transparent 70%);
+    background: rgba(255, 83, 136, 0.2);
     border-radius: var(--radius-full);
     display: flex;
     justify-content: center;
@@ -2182,7 +2179,7 @@ body {
     margin-top: 24px;
     margin-bottom: 20px;
     padding: 22px 18px 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 83, 136, 0.12) 100%);
+    background: rgba(255, 83, 136, 0.1);
     border: 1.5px solid rgba(255, 117, 140, 0.55);
     border-radius: var(--radius-lg);
     box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55), 0 0 25px rgba(255, 83, 136, 0.2);
@@ -2199,7 +2196,7 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
     color: #ffffff;
-    background: linear-gradient(135deg, #1dbf73 0%, #109655 100%);
+    background: #1dbf73;
     padding: 4px 14px;
     border-radius: var(--radius-full);
     margin-bottom: 12px;
@@ -2231,7 +2228,7 @@ body {
     gap: 8px;
     width: 100%;
     padding: 14px 20px;
-    background: linear-gradient(135deg, #1dbf73 0%, #109655 100%);
+    background: #1dbf73;
     color: #ffffff;
     font-family: var(--font-sans);
     font-size: 0.92rem;
